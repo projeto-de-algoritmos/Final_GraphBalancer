@@ -1,45 +1,46 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Graph Balancer
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 6<br>
+**Conteúdo da Disciplina**: Trabalho Final<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 18/0018604  |  Hugo Sobral de Lima Salomão |
+| 18/0021974  |  Leonardo da Silva Gomes |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O objetivo deste trabalho é ser uma aplicação hipotética para o uso de algoritmos para marcação de nós de um grafo com diferentes flags, para este caso, cores. Entretanto, para aumentar a complexidade do algoritmo utilizado, é imposta a restrição de que nós vizinhos não podem ser marcados com a mesma cor. A priori isto parece ser uma tarefa simples de ser resolvida, mas o desafio se torna interessante quando temos um grafo grande e denso sendo colocado a prova nesta aplicação.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: JavaScript<br>
+**Framework**: React JS<br>
 
-## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Para rodar o projeto, você precisa seguir as seguintes instruções:
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+1. Clonar o repositório
+```
+git clone https://github.com/projeto-de-algoritmos/PD_TravelPlanner.git
+```
 
+2. Entrar na pasta raíz do projeto e instalar as dependências por meio de:
+```
+npm install
+```
+ou então
+```
+yarn install
+```
 
-
+3. Inicializar a aplicação
+```
+npm start
+```
+ou então
+```
+yarn start
+```
 
