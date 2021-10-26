@@ -1,28 +1,34 @@
 class Graph {
     constructor() {
         this.nodes = [];
-        this.edges = [];
+        this.links = [];
+        this.edges = {};
+        this.colors = {};
     }
 
     addNode(node) {
         this.nodes.push(node);
+        this.edges[node.id] = [];
+        this.colors[node.id] = -1;
     }
 
-    addEdge(edge) {
-        this.edges.push(edge);
+    addLink(link) {
+        this.links.push(link);
+        this.edges[link.source].push(link.target);
+        this.edges[link.target].push(source);
     }
 }
 
 class Node {
-    constructor(id, name, val) {
+    constructor(id, name) {
         this.id = id;
         this.name = name;
-        this.val = val;
+        this.val = 1;
         this.color = -1;
     }
 }
 
-class Edge {
+class Link {
     constructor(source, target) {
         this.source = source;
         this.target = target;
