@@ -44,3 +44,8 @@ ou então
 yarn start
 ```
 
+## Uso
+A utilização da aplicação é bastante simples e intuitiva. Ao iniciar o site localmente, o usuário se depara com um modal explicativo que contextualiza o Graph  Balancer.
+
+Depois de fechar o modal, o usuário tem dois botões disponíveis, um para gerar um novo grafo com nós pintados como pretos; e um outro botão para balancear o grafo, desta forma, nenhum nó vai apresentar a mesma cor que seus vizinhos. O site se inicializa com um grafo randômica com nós pintados de pretos.
+
