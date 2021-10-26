@@ -26,7 +26,7 @@ Para rodar o projeto, você precisa seguir as seguintes instruções:
 
 1. Clonar o repositório
 ```
-git clone https://github.com/projeto-de-algoritmos/PD_TravelPlanner.git
+git clone https://github.com/projeto-de-algoritmos/Final_GraphBalancer.git
 ```
 
 2. Entrar na pasta raíz do projeto e instalar as dependências por meio de:
