@@ -7,31 +7,6 @@ import { generateGraph } from "./utils/Generate";
 import { balanceGraph } from "./utils/BalanceGraph";
 import formatGraph from "./utils/FormatGraph";
 
-// const bit = {
-//   nodes: [
-//     {
-//       id: "id1",
-//       val: 1,
-//       color: "#657445",
-//     },
-//     {
-//       id: "id2",
-//       val: 1,
-//       color: "#af7445",
-//     },
-//   ],
-//   links: [
-//     {
-//       source: "id1",
-//       target: "id2",
-//     },
-//     {
-//       source: "id1",
-//       target: "id3",
-//     },
-//   ],
-// };
-
 const App = () => {
   const [modal, setModal] = useState(true);
   const [graph, setGraph] = useState();
@@ -92,7 +67,7 @@ const App = () => {
               setFormatedGraph(fg);
             }}
           >
-            Colorir grafo
+            Balancear grafo
           </Button>
         </div>
       </div>
