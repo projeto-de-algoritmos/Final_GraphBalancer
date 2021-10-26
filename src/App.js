@@ -4,38 +4,8 @@ import { useState, useEffect } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import { Button, Modal, Box } from "@material-ui/core";
 import { generateGraph } from "./utils/Generate";
-// import { balanceGraph } from "./utils/BalanceGraph";
+import { balanceGraph } from "./utils/BalanceGraph";
 import formatGraph from "./utils/FormatGraph";
-
-var myData = {
-  nodes: [
-    {
-      id: "1",
-      val: 1,
-      color: "#657445",
-    },
-    {
-      id: "2",
-      val: 1,
-      color: "#af7445",
-    },
-    {
-      id: "3",
-      val: 1,
-      color: "#af7445",
-    },
-  ],
-  links: [
-    {
-      source: "1",
-      target: "2",
-    },
-    {
-      source: "1",
-      target: "3",
-    },
-  ],
-};
 
 // const bit = {
 //   nodes: [
@@ -65,11 +35,13 @@ var myData = {
 const App = () => {
   const [modal, setModal] = useState(true);
   const [graph, setGraph] = useState();
+  const [formatedGraph, setFormatedGraph] = useState();
 
   useEffect(() => {
     const g = generateGraph();
+    setGraph(g);
     const fg = formatGraph(g);
-    setGraph(fg);
+    setFormatedGraph(fg);
   }, []);
 
   return (
@@ -98,10 +70,28 @@ const App = () => {
       <div className="SideBar">
         <div className="SideBarContent">
           <h2>Graph Balancer</h2>
-          <Button variant="outlined" className="button">
+          <Button
+            variant="outlined"
+            className="button"
+            onClick={() => {
+              const g = generateGraph();
+              setGraph(g);
+              const fg = formatGraph(g);
+              setFormatedGraph(fg);
+            }}
+          >
             Gerar grafo
           </Button>
-          <Button variant="outlined" className="button">
+          <Button
+            variant="outlined"
+            className="button"
+            onClick={() => {
+              const g = balanceGraph(graph);
+              setGraph(g);
+              const fg = formatGraph(g);
+              setFormatedGraph(fg);
+            }}
+          >
             Colorir grafo
           </Button>
         </div>
@@ -115,7 +105,7 @@ const App = () => {
             linkColor="#000000"
             linkOpacity={1}
             linkWidth={1.5}
-            graphData={graph}
+            graphData={formatedGraph}
           />
         </div>
       )}
