@@ -1,41 +1,76 @@
 import "./App.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import { Button, Modal, Box } from "@material-ui/core";
+import { generateGraph } from "./utils/Generate";
+// import { balanceGraph } from "./utils/BalanceGraph";
+import formatGraph from "./utils/FormatGraph";
 
-const myData = {
+var myData = {
   nodes: [
     {
-      id: "id1",
+      id: "1",
       val: 1,
       color: "#657445",
     },
     {
-      id: "id2",
+      id: "2",
       val: 1,
       color: "#af7445",
     },
     {
-      id: "id3",
+      id: "3",
       val: 1,
       color: "#af7445",
     },
   ],
   links: [
     {
-      source: "id1",
-      target: "id2",
+      source: "1",
+      target: "2",
     },
     {
-      source: "id1",
-      target: "id3",
+      source: "1",
+      target: "3",
     },
   ],
 };
 
+// const bit = {
+//   nodes: [
+//     {
+//       id: "id1",
+//       val: 1,
+//       color: "#657445",
+//     },
+//     {
+//       id: "id2",
+//       val: 1,
+//       color: "#af7445",
+//     },
+//   ],
+//   links: [
+//     {
+//       source: "id1",
+//       target: "id2",
+//     },
+//     {
+//       source: "id1",
+//       target: "id3",
+//     },
+//   ],
+// };
+
 const App = () => {
   const [modal, setModal] = useState(true);
+  const [graph, setGraph] = useState();
+
+  useEffect(() => {
+    const g = generateGraph();
+    const fg = formatGraph(g);
+    setGraph(fg);
+  }, []);
 
   return (
     <div className="App">
@@ -71,17 +106,19 @@ const App = () => {
           </Button>
         </div>
       </div>
-      <div className="Graph">
-        <ForceGraph3D
-          backgroundColor="#ffffff"
-          nodeOpacity={1}
-          width={window.innerWidth - 300}
-          linkColor="#000000"
-          linkOpacity={1}
-          linkWidth={1.5}
-          graphData={myData}
-        />
-      </div>
+      {graph && (
+        <div className="Graph">
+          <ForceGraph3D
+            backgroundColor="#ffffff"
+            nodeOpacity={1}
+            width={window.innerWidth - 300}
+            linkColor="#000000"
+            linkOpacity={1}
+            linkWidth={1.5}
+            graphData={graph}
+          />
+        </div>
+      )}
     </div>
   );
 };
