@@ -1,30 +1,44 @@
 export class Graph {
     constructor() {
         this.nodes = [];
-        this.links = [];
         this.edges = {};
         this.colors = {};
     }
 
     addNode(node) {
         this.nodes.push(node);
-        this.edges[node.id] = [];
-        this.colors[node.id] = -1;
+        this.edges[node] = [];
+        this.colors[node] = -1;
+    }
+    
+    addEdge(node1, node2) {
+        if (node1 !== node2) {
+            this.edges[node1].push(node2);
+            this.edges[node2].push(node1);
+        }
+    }
+}
+
+export class FormatedGraph {
+    constructor() {
+        this.nodes = [];
+        this.links = [];
     }
 
-    addLink(link) {
-        this.links.push(link);
-        this.edges[link.source].push(link.target);
-        this.edges[link.target].push(link.source);
+    addNode(node) {
+        this.nodes.push(node);
+    }
+
+    addLink(Link) {
+        this.links.push(Link);
     }
 }
 
 export class Node {
-    constructor(id, name) {
+    constructor(id) {
         this.id = id;
-        this.name = name;
         this.val = 1;
-        this.color = -1;
+        this.color = "#121212";
     }
 }
 
