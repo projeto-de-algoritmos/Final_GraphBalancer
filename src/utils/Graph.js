@@ -1,4 +1,4 @@
-class Graph {
+export class Graph {
     constructor() {
         this.nodes = [];
         this.links = [];
@@ -15,11 +15,11 @@ class Graph {
     addLink(link) {
         this.links.push(link);
         this.edges[link.source].push(link.target);
-        this.edges[link.target].push(source);
+        this.edges[link.target].push(link.source);
     }
 }
 
-class Node {
+export class Node {
     constructor(id, name) {
         this.id = id;
         this.name = name;
@@ -28,7 +28,7 @@ class Node {
     }
 }
 
-class Link {
+export class Link {
     constructor(source, target) {
         this.source = source;
         this.target = target;
